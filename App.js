@@ -42,14 +42,37 @@ class Botao extends Component {
 }
 
 export default class biscoitosorte extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { texto: "" };
+
+    this.frases = [
+      "Tenha um bom dia",
+      "A vida é bela como sempre",
+      "Tudo que é bom dura pouco.",
+      "Cada pessoa devia cuidar da sua vida",
+      "Ta bom",
+      "Nada como um dia após o outro.",
+      "Os humilhados serão eliminados",
+    ];
+    this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
+  }
+
   quebrarBiscoito() {
-    alert("quebrou agora");
+    let s = this.state;
+
+    let r = Math.floor(Math.random() * this.frases.length);
+
+    s.texto = this.frases[r];
+
+    this.setState(s);
   }
 
   render() {
     return (
       <View style={styles.body}>
         <Image source={require("./images/cookie.png")} />
+        <Text style={styles.texto}> "{this.state.texto}"</Text>
 
         <Botao
           color="#B59619"
@@ -67,5 +90,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  texto: {
+    fontSize: 17,
+    color: "#B59619",
+    margin: 30,
+    fontStyle: "italic",
   },
 });
