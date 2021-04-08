@@ -24,8 +24,9 @@ class Botao extends Component {
       },
       botaoText: {
         color: props.color,
-        fontSize: 14,
+        fontSize: 25,
         fontWeight: "bold",
+        zIndex: 1,
       },
     });
   }
@@ -47,12 +48,13 @@ export default class biscoitosorte extends Component {
     this.state = { texto: "" };
 
     this.frases = [
-      "Tenha um bom dia",
-      "A vida é bela como sempre",
-      "Tudo que é bom dura pouco.",
+      "Tocando a vida como toco violão. Eu não sei tocar violão.",
+      "Sinta-se em casa, mas lembre que não esta.",
+      "Se nem Jesus agradou todos, imagina eu",
+      "A vida é uma sopa e eu estou de garfo.",
       "Cada pessoa devia cuidar da sua vida",
-      "Ta bom",
-      "Nada como um dia após o outro.",
+      "Infelizmente a função de agradar a todos não é minha.",
+      "Que Jesus te guarde e esqueça onde.",
       "Os humilhados serão eliminados",
     ];
     this.quebrarBiscoito = this.quebrarBiscoito.bind(this);
@@ -71,11 +73,10 @@ export default class biscoitosorte extends Component {
   render() {
     return (
       <View style={styles.body}>
-        <Image source={require("./images/cookie.png")} />
+        <Image source={require("./images/avatar.jpg")} />
         <Text style={styles.texto}> "{this.state.texto}"</Text>
-
         <Botao
-          color="#B59619"
+          color="#f7c2c5"
           text="Quebre sua sorte"
           onPress={this.quebrarBiscoito}
         />
@@ -90,11 +91,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#eb709f",
   },
   texto: {
-    fontSize: 17,
-    color: "#B59619",
+    fontSize: 30,
+    color: "#f7c2c5",
     margin: 30,
     fontStyle: "italic",
+    textAlign: "center",
   },
 });
