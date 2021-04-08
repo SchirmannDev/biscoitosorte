@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, View, Image } from "react-native";
 
 class Botao extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Botao extends Component {
 
   render() {
     return (
-      <TouchableOpacity style={this.styles.botao}>
+      <TouchableOpacity style={this.styles.botao} onPress={this.props.onPress}>
         <View style={this.styles.botaoArea}>
           <Text style={this.styles.botaoText}>{this.props.text}</Text>
         </View>
@@ -49,6 +49,8 @@ export default class biscoitosorte extends Component {
   render() {
     return (
       <View style={styles.body}>
+        <Image source={require("./images/cookie.png")} />
+
         <Botao
           color="#B59619"
           text="Quebre sua sorte"
@@ -62,5 +64,8 @@ export default class biscoitosorte extends Component {
 const styles = StyleSheet.create({
   body: {
     paddingTop: 20,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
