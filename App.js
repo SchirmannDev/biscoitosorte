@@ -7,7 +7,13 @@ class Botao extends Component {
     super(props);
     this.state = {};
     this.styles = StyleSheet.create({
-      botao: {},
+      botao: {
+        width: 250,
+        height: 50,
+        borderWidth: 2,
+        borderColor: "#ff0000",
+        backgroundColor: "transparent",
+      },
     });
   }
 
