@@ -11,8 +11,21 @@ class Botao extends Component {
         width: 250,
         height: 50,
         borderWidth: 2,
-        borderColor: "#ff0000",
+        borderColor: props.color,
         backgroundColor: "transparent",
+        borderRadius: 25,
+        margin: 10,
+      },
+      botaoArea: {
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+      botaoText: {
+        color: props.color,
+        fontSize: 14,
+        fontWeight: "bold",
       },
     });
   }
@@ -20,8 +33,8 @@ class Botao extends Component {
   render() {
     return (
       <TouchableOpacity style={this.styles.botao}>
-        <View>
-          <Text>Quebrar biscoito</Text>
+        <View style={this.styles.botaoArea}>
+          <Text style={this.styles.botaoText}>{this.props.text}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -29,10 +42,18 @@ class Botao extends Component {
 }
 
 export default class biscoitosorte extends Component {
+  quebrarBiscoito() {
+    alert("quebrou agora");
+  }
+
   render() {
     return (
       <View style={styles.body}>
-        <Botao />
+        <Botao
+          color="#B59619"
+          text="Quebre sua sorte"
+          onPress={this.quebrarBiscoito}
+        />
       </View>
     );
   }
