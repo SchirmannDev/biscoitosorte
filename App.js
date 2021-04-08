@@ -1,11 +1,32 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+
+import { Text, StyleSheet, TouchableOpacity, View } from "react-native";
+
+class Botao extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.styles = StyleSheet.create({
+      botao: {},
+    });
+  }
+
+  render() {
+    return (
+      <TouchableOpacity style={this.styles.botao}>
+        <View>
+          <Text>Quebrar biscoito</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+}
 
 export default class biscoitosorte extends Component {
   render() {
     return (
       <View style={styles.body}>
-        <Text></Text>
+        <Botao />
       </View>
     );
   }
@@ -14,9 +35,5 @@ export default class biscoitosorte extends Component {
 const styles = StyleSheet.create({
   body: {
     paddingTop: 20,
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
